@@ -1,8 +1,6 @@
 import { defineConfig } from 'rollup';
-// import typescript from 'rollup-plugin-typescript2';
-// import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import { uglify } from 'rollup-plugin-uglify';
+import terser from '@rollup/plugin-terser';
 import esbuild from 'rollup-plugin-esbuild';
 import dts from 'rollup-plugin-dts';
 import json from '@rollup/plugin-json';
@@ -11,54 +9,45 @@ const config = defineConfig([
   {
     input: [`./src/core/index.ts`],
     output: [
-      {
-        file: `./dist/index.cjs.js`,
-        format: 'cjs',
-        sourcemap: true,
-      },
+      // {
+      //   file: `./dist/index.cjs.js`,
+      //   format: 'cjs',
+      //   sourcemap: true,
+      // },
       {
         file: `./dist/index.esm.js`,
         format: 'esm',
         sourcemap: true,
       },
-      {
-        file: `./dist/index.js`,
-        format: 'umd',
-        name: 'RTCClient',
-        sourcemap: true,
-      },
-      {
-        file: `./dist/index.min.js`,
-        format: 'umd',
-        name: 'RTCClient',
-        sourcemap: true,
-        plugins: [uglify()],
-      },
+      // {
+      //   file: `./dist/index.js`,
+      //   format: 'umd',
+      //   name: 'RTCClient',
+      //   sourcemap: true,
+      // },
+      // {
+      //   file: `./dist/index.min.js`,
+      //   format: 'umd',
+      //   name: 'RTCClient',
+      //   sourcemap: true,
+      // },
     ],
     plugins: [
       esbuild({
         target: 'es2015',
       }),
-      // typescript({
-      //   tsconfigOverride: {
-      //     compilerOptions: {
-      //       module: 'ESNext',
-      //     },
-      //   },
-      //   useTsconfigDeclarationDir: true,
-      // }),
-      // resolve(),
       commonjs(),
       json(),
+      terser()
     ],
   },
   {
     input: `./src/core/index.ts`,
     output: [
-      { file: `./dist/index.cjs.d.ts`, format: 'cjs' },
+      // { file: `./dist/index.cjs.d.ts`, format: 'cjs' },
       { file: `./dist/index.esm.d.ts`, format: 'esm' },
-      { file: `./dist/index.d.ts`, format: 'umd' },
-      { file: `./dist/index.min.d.ts`, format: 'umd' },
+      // { file: `./dist/index.d.ts`, format: 'umd' },
+      // { file: `./dist/index.min.d.ts`, format: 'umd' },
     ],
     plugins: [
       dts({
