@@ -1,0 +1,51 @@
+{
+  "name": "rtc-client",
+  "author": "houwx",
+  "version": "1.0.0",
+  "description": "SDK based on browser WebRTC API encapsulation for building video call applications",
+  "main": "dist/index.min.js",
+  "module": "dist/index.esm.js",
+  "type": "module",
+  "scripts": {
+    "prettier": "prettier --write .",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "webrtc",
+    "rtc",
+    "sdk",
+    "rtc-sdk",
+    "rtc-client",
+    "webrtc-sdk",
+    "webrtc-client",
+    "webrtc-api"
+  ],
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/node": "^20.9.0",
+    "deepcopy": "^2.1.0",
+    "mitt": "^3.0.1",
+    "prettier": "^3.0.3",
+    "rollup": "^4.3.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "socket.io-client": "^4.7.2",
+    "typescript": "^5.2.2"
+  },
+  "bugs": {
+    "url": "https://github.com/milletlovemouse/rtc-client/issues"
+  },
+  "homepage": "https://github.com/milletlovemouse/rtc-client#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/milletlovemouse/rtc-client.git"
+  },
+  "dependencies": {}
+}
