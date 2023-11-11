@@ -10,6 +10,7 @@
     "strictPropertyInitialization": false,
     "declaration": true,
     "declarationDir": "./types",
+    "emitDeclarationOnly": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true
   },

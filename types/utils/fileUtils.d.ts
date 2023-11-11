@@ -1,7 +1,13 @@
 export declare function sliceBase64ToFile(base64Str: string | string[], filename: string): File;
 export declare function base64ToBlob(base64Str: string): Blob;
-export declare function sliceFileAndBlobToBase64(file: FileOrBlob, chunkSize?: number): Promise<string[]>;
-export declare function sliceFileAndBlobToArrayBuffer(file: FileOrBlob, chunkSize?: number): Promise<ArrayBuffer[]>;
+export declare function sliceFileAndBlobToBase64(
+  file: FileOrBlob,
+  chunkSize?: number,
+): Promise<string[]>;
+export declare function sliceFileAndBlobToArrayBuffer(
+  file: FileOrBlob,
+  chunkSize?: number,
+): Promise<ArrayBuffer[]>;
 export declare function sliceFileOrBlob(file: FileOrBlob, chunkSize?: number): Blob[];
 export declare function base64ToFile(base64Str: string, filename: string): File;
 type FileOrBlob = File | Blob;

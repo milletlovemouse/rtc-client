@@ -1,13 +1,21 @@
-export declare function debounce<T>(fn: (...args: any[]) => T, delay: number, immediate?: boolean): {
-    (...args: any[]): Promise<T>;
-    cancel(): void;
+export declare function debounce<T>(
+  fn: (...args: any[]) => T,
+  delay: number,
+  immediate?: boolean,
+): {
+  (...args: any[]): Promise<T>;
+  cancel(): void;
 };
-export declare function throttle<T>(fn: (...args: any[]) => T, interval: number, options?: {
+export declare function throttle<T>(
+  fn: (...args: any[]) => T,
+  interval: number,
+  options?: {
     leading: boolean;
     trailing: boolean;
-}): {
-    (...args: any[]): Promise<T>;
-    cancel(): void;
+  },
+): {
+  (...args: any[]): Promise<T>;
+  cancel(): void;
 };
 export declare const isBoolean: (data: any) => boolean;
 export declare const isNumber: (data: any) => boolean;

@@ -1,8 +1,9 @@
 import { defineConfig } from 'rollup';
-import typescript from 'rollup-plugin-typescript2';
+// import typescript from 'rollup-plugin-typescript2';
 // import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { uglify } from 'rollup-plugin-uglify';
+import esbuild from 'rollup-plugin-esbuild';
 import dts from 'rollup-plugin-dts';
 import json from '@rollup/plugin-json';
 
@@ -35,14 +36,17 @@ const config = defineConfig([
       },
     ],
     plugins: [
-      typescript({
-        tsconfigOverride: {
-          compilerOptions: {
-            module: 'ESNext',
-          },
-        },
-        useTsconfigDeclarationDir: true,
+      esbuild({
+        target: 'es2015',
       }),
+      // typescript({
+      //   tsconfigOverride: {
+      //     compilerOptions: {
+      //       module: 'ESNext',
+      //     },
+      //   },
+      //   useTsconfigDeclarationDir: true,
+      // }),
       // resolve(),
       commonjs(),
       json(),

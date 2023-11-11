@@ -1,2 +1,2 @@
-import RTCClient from './WebRTC/rtc-client';
-export default RTCClient;
+export * from '../types/WebRTC';
+export { default } from './WebRTC/rtc-client';
