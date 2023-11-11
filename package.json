@@ -1,5 +1,5 @@
 {
-  "name": "rtc-client",
+  "name": "@houwx/rtc-client",
   "author": "houwx",
   "version": "1.0.0",
   "description": "SDK based on browser WebRTC API encapsulation for building video call applications",
